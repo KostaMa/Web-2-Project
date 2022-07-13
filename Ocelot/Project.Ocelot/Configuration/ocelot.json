@@ -1,0 +1,285 @@
+{
+    "ReRoutes": [
+      {
+        "DownstreamPathTemplate": "/api/person",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/person",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/person/{idPerson}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/person/{idPerson}",
+        "UpstreamHttpMethod": [ "Get", "Put", "Delete" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/person/deliverers",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/person/deliverers",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/person/{idPerson}/image",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/person/{idPerson}/image",
+        "UpstreamHttpMethod": [ "Get", "Post" ]
+      },
+
+      {
+        "DownstreamPathTemplate": "/api/admin/accept",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/admin/accept",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/admin/denied",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/admin/denied",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+
+      {
+        "DownstreamPathTemplate": "/api/account/login",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/account/login",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/account/login-google",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/account/login-google",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/account/register-deliverer",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/account/register-deliverer",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/account/register-customer",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7298
+          }
+        ],
+        "UpstreamPathTemplate": "/api/account/register-customer",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+
+      {
+        "DownstreamPathTemplate": "/api/product",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/product",
+        "UpstreamHttpMethod": [ "Get", "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/product/{idProduct}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/product/{idProduct}",
+        "UpstreamHttpMethod": [ "Get", "Put", "Delete" ]
+      },
+
+
+
+
+
+
+      {
+        "DownstreamPathTemplate": "/api/order",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/complated-orders",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/complated-orders",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/{idPerson}/orders",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/{idPerson}/orders",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/{idPerson}/my-orders",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/{idPerson}/my-orders",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/{id}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/{id}",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/{IdCustomer}/current",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/{IdCustomer}/current",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/products/{id}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/products/{id}",
+        "UpstreamHttpMethod": [ "Get" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/accept-order",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/accept-order",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/order",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/order",
+        "UpstreamHttpMethod": [ "Post" ]
+      },
+      {
+        "DownstreamPathTemplate": "/api/order/confirmation/{idOrder}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7299
+          }
+        ],
+        "UpstreamPathTemplate": "/api/order/confirmation/{idOrder}",
+        "UpstreamHttpMethod": [ "Get" ]
+      }
+
+
+
+
+    ],
+
+    "GlobalConfiguration": {
+      "BaseUrl": "https://localhost:7015"
+    }
+  }

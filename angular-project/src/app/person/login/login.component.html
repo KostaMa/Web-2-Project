@@ -1,0 +1,45 @@
+<img src="/assets/img/single_user.png" class="mx-auto d-block" />
+<form [formGroup]="loginForm" class="mb-4" autocomplete="off">
+  <div class="form-group">
+    <label>Username</label>
+    <input class="form-control" formControlName="username" />
+    <div class="alert alert-danger" *ngIf="username?.errors?.['required']">
+      Username is requiered.
+    </div>
+    <div class="alert alert-danger" *ngIf="username?.errors?.['minlength']">
+      Username should contain at least 4 characters.
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" formControlName="password" />
+    <div class="alert alert-danger" *ngIf="password?.errors?.['required']">
+      Password is requiered.
+    </div>
+    <div class="alert alert-danger" *ngIf="password?.errors?.['minlength']">
+      Password should contain at least 4 characters.
+    </div>
+  </div>
+  <div class="text-center">
+    <div class="form-group col-md-8 offset-md-2">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg btn-block"
+        (click)="onSubmit()"
+      >
+        Sing in
+      </button>
+      &nbsp;or&nbsp;
+      <button
+        (click)="loginWithGoogle()"
+        class="btn btn-primary btn-lg btn-block"
+      >
+        <img src="https://img.icons8.com/color/16/000000/google-logo.png" />
+        Google
+      </button>
+    </div>
+  </div>
+</form>
+<div class="text-center">
+  <p>Not a member? <a [routerLink]="['/register']">Register</a></p>
+</div>

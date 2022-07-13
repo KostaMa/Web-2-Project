@@ -1,0 +1,195 @@
+<hr />
+
+<div class="card mb-4">
+  <div class="card-header">New product</div>
+  <div class="card-body">
+    <form [formGroup]="personForm" (ngSubmit)="onSubmit(personForm.value)">
+      <div class="mb-3">
+        <div class="mb-3">
+          <label class="small mb-1">Username</label>
+          <input
+            class="form-control"
+            placeholder="Enter username"
+            formControlName="username"
+            id="username"
+            name="username"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="username?.errors?.['required']"
+          >
+            Username is requiered.
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="username?.errors?.['minlength']"
+          >
+            Username should contain at least 4 characters.
+          </div>
+        </div>
+      </div>
+      <div class="row gx-3 mb-3">
+        <div class="col-md-6">
+          <label class="small mb-1">First name</label>
+          <input
+            class="form-control"
+            type="text"
+            id="firstname"
+            formControlName="firstname"
+            placeholder="Enter first name"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="firstname?.errors?.['required']"
+          >
+            First name is requiered.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="small mb-1">Last name</label>
+          <input
+            class="form-control"
+            type="text"
+            id="lastname"
+            formControlName="lastname"
+            placeholder="Enter lastname"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="lastname?.errors?.['required']"
+          >
+            Last name is requiered.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="mb-3">
+          <label class="small mb-1">Email</label>
+          <input
+            class="form-control"
+            placeholder="Enter email"
+            formControlName="email"
+            id="email"
+            name="email"
+          />
+          <div class="alert alert-danger" *ngIf="email?.errors?.['email']">
+            Incorrect email form.
+          </div>
+          <div class="alert alert-danger" *ngIf="email?.errors?.['required']">
+            Email is requiered.
+          </div>
+        </div>
+      </div>
+      <div class="row gx-3 mb-3">
+        <div class="col-md-6">
+          <label class="small mb-1">Password</label>
+          <input
+            class="form-control"
+            type="password"
+            id="password"
+            formControlName="password"
+            placeholder="Enter password"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="password?.errors?.['required']"
+          >
+            Password is requiered.
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="password?.errors?.['minlength']"
+          >
+            Password should contain at least 4 characters.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="small mb-1">Confirm password</label>
+          <input
+            class="form-control"
+            type="password"
+            id="passwordCheck"
+            formControlName="passwordCheck"
+            placeholder="Repeat password"
+          />
+          <div
+            class="alert alert-danger"
+            *ngIf="passwordCheck?.errors?.['required']"
+          >
+            Password is requiered.
+          </div>
+          <div
+            class="alert alert-danger"
+            *ngIf="passwordCheck?.errors?.['minlength']"
+          >
+            Password should contain at least 4 characters.
+          </div>
+        </div>
+      </div>
+      <div class="row gx-3 mb-3">
+        <div class="col-md-6">
+          <label class="small mb-1">Address</label>
+          <input
+            class="form-control"
+            type="text"
+            id="address"
+            formControlName="address"
+            placeholder="Enter address"
+          />
+          <div class="alert alert-danger" *ngIf="address?.errors?.['required']">
+            Address is requiered.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="small mb-1">Birth</label>
+          <input
+            class="form-control"
+            type="date"
+            id="birth"
+            min="1900-01-01T00:00"
+            max="2010-01-01T00:00"
+            formControlName="birth"
+            placeholder="Pick date"
+          />
+          <div class="alert alert-danger" *ngIf="birth?.errors?.['required']">
+            Birth is requiered.
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h6 class="mb-2 pb-1">Regeister as:</h6>
+
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="option"
+            id="femaleGender"
+            value="customer"
+            formControlName="option"
+            checked
+          />
+          <label class="form-check-label" for="femaleGender">Customer</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="option"
+            id="maleGender"
+            value="deliverer"
+            formControlName="option"
+          />
+          <label class="form-check-label" for="maleGender">Deliverer</label>
+        </div>
+      </div>
+      <br />
+      <div class="text-center">
+        <button class="btn btn-primary" [disabled]="!personForm.valid">
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

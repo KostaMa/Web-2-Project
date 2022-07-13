@@ -1,0 +1,54 @@
+<div *ngIf="role === 'Admin'">
+  <h2>All orders</h2>
+  <hr />
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Address</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Total</th>
+        <th scope="col">Order status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.address }}</td>
+        <td>{{ order.comment }}</td>
+        <td>{{ order.total }}</td>
+        <td>{{ order.orderStatus }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="role === 'Deliverer'">
+  <h2>New orders</h2>
+  <hr />
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Address</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Total</th>
+        <th scope="col">Order status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td *ngIf="order.orderStatus === 'OnHold'">{{ order.address }}</td>
+        <td *ngIf="order.orderStatus === 'OnHold'">{{ order.comment }}</td>
+        <td *ngIf="order.orderStatus === 'OnHold'">{{ order.total }}</td>
+        <td *ngIf="order.orderStatus === 'OnHold'">{{ order.orderStatus }}</td>
+        <td *ngIf="order.orderStatus === 'OnHold'">
+          <button
+            class="btn btn-primary"
+            [disabled]="isDisabled"
+            (click)="acceptOrder(order.id)"
+          >
+            Accept
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

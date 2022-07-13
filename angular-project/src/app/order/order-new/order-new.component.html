@@ -1,0 +1,97 @@
+<h2>New order</h2>
+
+<div *ngIf="products.length > 0; else noItems">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Ingredients</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.ingredients }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="onSelect(product.id)">
+            Select
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noItems>
+  <p>This cart is empty</p>
+</ng-template>
+<br />
+<hr />
+
+<h3>Submit order form</h3>
+<form [formGroup]="orderForm" (ngSubmit)="submitForm(orderForm.value)">
+  <div class="form-group">
+    <label class="validationCustom03">Address</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="address"
+      id="address"
+      name="address"
+      placeholder="Enter addres for delivery"
+    />
+    <div class="alert alert-danger" *ngIf="address?.errors?.['required']">
+      Address is requiered.
+    </div>
+  </div>
+  <div class="form-group">
+    <hr />
+    <label>Your ordered</label>
+    <table class="table" *ngIf="selectedProducts.length !== 0; else message">
+      <tbody>
+        <tr *ngFor="let product of selectedProducts; let i = index">
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.ingredients }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="onRemove(i)">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #message>
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">List is empty.</th>
+          </tr>
+        </thead>
+      </table>
+    </ng-template>
+  </div>
+  <h3 *ngIf="sum !== 0">
+    Total price with $300 for delivery: <b>{{ sum + 300 | currency }}</b>
+  </h3>
+  <hr />
+  <div class="form-group">
+    <label for="">Comment</label>
+    <textarea
+      class="form-control"
+      placeholder="Enter comment"
+      formControlName="comment"
+      id="comment"
+      name="comment"
+      rows="3"
+    ></textarea>
+  </div>
+  <div>
+    <button class="btn btn-primary" [disabled]="!orderForm.valid">
+      Submit
+    </button>
+  </div>
+</form>
+<br />

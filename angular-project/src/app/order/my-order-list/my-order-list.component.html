@@ -1,0 +1,22 @@
+<h2>My orders</h2>
+
+<div *ngIf="orders">
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Address</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Total</th>
+        <th scope="col">Order status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.address }}</td>
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.comment }}</td>
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.total }}</td>
+        <td *ngIf="order.orderStatus === 'Done'">{{ order.orderStatus }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

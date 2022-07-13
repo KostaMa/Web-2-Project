@@ -1,0 +1,8 @@
+<div *ngIf="finished == false">
+  <h1>Vreme do isporuke: {{ minutes }}:{{ seconds }}</h1>
+
+  <app-order-current [order]="order"></app-order-current>
+</div>
+<div *ngIf="finished == true">
+  <h1>Sve porudzbine su isporucene</h1>
+</div>
